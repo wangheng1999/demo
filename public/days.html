@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Days</title>
+    <link rel="stylesheet" href="style/days.css">
+</head>
+<body>
+<div class="app">
+    <div>
+        <div class="icon_title title1">
+            <div class="icon"><img src="icon/img4.png"/></div>
+            Sliding distance
+        </div>
+        <div class="ele">
+            <div><span class="ski_con1">0.0</span>m</div>
+            <div class="ski_type">Buddhist Snowman</div>
+        </div>
+    </div>
+    <div>
+        <div class="icon_title title2">
+            <div class="icon"><img src="icon/img5.png"/></div>
+            Taxi days
+        </div>
+        <div class="day_num"><span class="ski_con2">13</span>Day</div>
+    </div>
+    <div>
+        <div class="icon_title title2">
+            <div class="icon"><img src="icon/img5.png"/></div>
+            Snow Field
+        </div>
+        <div class="day_num"><span class="ski_con3">5</span>Home</div>
+    </div>
+    <div>
+        <div class="icon_title title2">
+            <div class="icon"><img src="icon/img7.png"/></div>
+            Cumulative time
+        </div>
+        <div class="ele2">
+            <div><span class="ski_con4">0.0</span></div>
+            <div class="ski_type">H</div>
+        </div>
+    </div>
+    <div>
+        <div class="icon_title title2">
+            <div class="icon"><img src="icon/img8.png"/></div>
+            Sliding drop
+        </div>
+        <div class="day_num"><span>9.2</span>M</div>
+    </div>
+    <div>
+        <div class="icon_title title2">
+            <div class="icon"><img src="icon/img9.png"/></div>
+            Number of times
+        </div>
+        <div class="day_num"><span class="ski_con5">0</span>Order</div>
+    </div>
+    <div class="back_btn">GO BACK</div>
+</div>
+
+<script>
+    let ski_con1 = document.querySelector(".ski_con1")
+    let ski_con4 = document.querySelector(".ski_con4")
+    let ski_con5 = document.querySelector(".ski_con5")
+    if (localStorage.getItem('data')) {
+        let obj = JSON.parse(localStorage.getItem('data'))
+        ski_con1.innerHTML = (obj.kilometers*1000).toFixed(2)
+        ski_con4.innerHTML = ((obj.storageTimeHour * 60 + obj.storageTimeMinute)/60).toFixed(2)
+        ski_con5.innerHTML = obj.SkiingFrequency
+    }
+    document.querySelector(".back_btn").onclick = function () {
+        history.back()
+    }
+</script>
+</body>
+</html>

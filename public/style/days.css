@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url("../font/Anton-Regular.ttf");
+    font-family: 'Anton-Regular';
+}
+
+@font-face {
+    src: url("../font/Koulen-Regular.ttf");
+    font-family: 'Koulen-Regular';
+}
+
+@font-face {
+    src: url("../font/Voltaire-Regular.ttf");
+    font-family: 'Voltaire-Regular';
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    background: #F5F5F5;
+    padding: 1vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    'a b'
+    'a c'
+    'd e'
+    'd f';
+    grid-gap: 1vw;
+}
+.app > div:nth-child(1){
+    grid-area: a;
+    background: #141519;
+}
+.app > div:nth-child(2){
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app > div:nth-child(3){
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app > div:nth-child(4){
+    grid-area: d;
+}
+.app > div:nth-child(5){
+    grid-area: e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.app > div:nth-child(6){
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.app > div{
+    background: white;
+    border-radius: 10px;
+    padding: 1.5vw;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.icon{
+    width: 40px;
+    margin-right: 5px;
+}
+.icon_title{
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+}
+.title1{
+    color: white;
+}
+.ele{
+    width: 14vw;
+    height: 14vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 8px solid #3B3B3D;
+    margin: 20px auto 0 auto;
+    flex-direction: column;
+    color: white;
+}
+.ele>div>span{
+    font-size: 40px;
+    font-family: 'Anton-Regular';
+}
+.ele>div{
+    font-family: 'Anton-Regular';
+}
+.ski_type{
+    font-family: 'Anton-Regular';
+    font-size: 20px;
+    font-weight: bold;
+}
+.title2{
+    color: #515151;
+}
+.ele2{
+    width: 14vw;
+    height: 14vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 8px solid #FA6D64;
+    margin: 20px auto 0 auto;
+    flex-direction: column;
+    color: #515151;
+}
+.ele2>div>span{
+    font-size: 40px;
+    font-family: 'Anton-Regular';
+    margin-right: 5px;
+    color: #0D0E12;
+}
+.day_num{
+    font-size: 20px;
+    font-weight: bold;
+    color: #A9A9A9;
+}
+.day_num>span{
+    font-size: 40px;
+    font-family: 'Anton-Regular';
+    color: #121317;
+    margin-right: 20px;
+}
+.back_btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: 95%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Anton-Regular';
+    border-radius: 50px!important;
+    background: black !important;
+    color: white;
+    display: none;
+}
+@media screen and (max-width: 768px) {
+
+    .app {
+        padding: 10px;
+        grid-template-rows: 130px 130px 130px 130px;
+        grid-gap: 10px;
+    }
+    .app>div{
+        padding: 15px;
+    }
+    .icon{
+        width: 26px;
+    }
+    .icon_title{
+        font-size: 18px;
+    }
+    .ele>div>span{
+        font-size: 26px;
+    }
+    .ski_type{
+        font-size: 16px;
+    }
+    .ele2,.ele{
+        width: 150px;
+        height: 150px;
+        margin: 30px auto 0 auto;
+    }
+    .ele2>div>span{
+        font-size: 26px;
+    }
+    .day_num{
+        font-size: 16px;
+    }
+    .day_num>span{
+        font-size: 26px;
+        margin-right: 10px;
+        font-weight: revert;
+    }
+    .back_btn{
+        display: block;
+    }
+}
